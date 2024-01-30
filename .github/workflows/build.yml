@@ -30,10 +30,10 @@ jobs:
           xorg-dev
           xvfb
       - name: Setup fyne
-        run: go install github.com/fyne-io/fyne-cross@latest
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
       - name: Install UPX
         uses: crazy-max/ghaction-upx@v3
         with:
           install-only: true
       - name: Package
-        run: fyne-cross windows -arch=amd64,386 --appVersion 2.0 --release true
+        run: fyne-cross windows -arch=*
