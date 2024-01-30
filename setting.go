@@ -55,7 +55,7 @@ func settingsScreen(a fyne.App, win fyne.Window, data *SettingsData) fyne.Canvas
 		widget.NewSeparator(),
 		widget.NewLabelWithStyle(LoadString("AboutLabel"), fyne.TextAlignLeading, fyne.TextStyle{Bold: true}),
 		container.NewHBox(
-			widget.NewLabel(LoadString("VersionLabel")+": v"+fyne.CurrentApp().Metadata().Version),
+			widget.NewLabel(LoadString("VersionLabel")+": "+fyne.CurrentApp().Metadata().Version),
 			newBtn,
 			widget.NewButton(LoadString("IssuesLabel"), func() {
 				_ = a.OpenURL(parseURL("https://github.com/libsgh/chrome_updater/issues"))
