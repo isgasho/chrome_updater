@@ -5,7 +5,6 @@
 
 ## 截图
 ![image](https://github.com/libsgh/chrome_updater/blob/main/doc/1.png?raw=true)
-![image](https://github.com/libsgh/chrome_updater/blob/main/doc/2.png?raw=true)
 
 ## 功能
 - [x] 便携Chrome版本检查和更新。

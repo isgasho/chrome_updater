@@ -4,7 +4,6 @@
 English | [中文](https://github.com/libsgh/chrome_updater/blob/main/README_ZH.md)
 
 ## Screenshot
-![image](https://github.com/libsgh/chrome_updater/blob/main/doc/1.png?raw=true)
 ![image](https://github.com/libsgh/chrome_updater/blob/main/doc/2.png?raw=true)
 
 ## Features
