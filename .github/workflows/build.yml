@@ -17,7 +17,7 @@ jobs:
       - uses: WillAbides/setup-go-faster@v1.14.0
         with:
           go-version: ${{ matrix.go-version }}
-      - name: Set env
+      - name: Setup Env
         run: >-
           sudo apt-get update &&
           sudo apt-get install
@@ -29,10 +29,11 @@ jobs:
           libxkbcommon-dev
           xorg-dev
           xvfb
-          wget https://github.com/upx/upx/releases/download/v4.0.2/upx-4.2.2-amd64_linux.tar.xz
-          tar -Jxf upx*.tar.xz
-          sudo cp upx*/upx /usr/bin
           go env -w GO111MODULE=on
           go install github.com/fyne-io/fyne-cross@latest
+      - name: Install UPX
+        uses: crazy-max/ghaction-upx@v3
+        with:
+          install-only: true
       - name: Package
         run: fyne-cross windows -arch=amd64,386 --appVersion 2.0 --release true
