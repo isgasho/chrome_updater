@@ -17,7 +17,7 @@ jobs:
       - uses: WillAbides/setup-go-faster@v1.14.0
         with:
           go-version: ${{ matrix.go-version }}
-      - name: Get dependencies
+      - name: Set env
         run: >-
           sudo apt-get update &&
           sudo apt-get install
@@ -29,7 +29,10 @@ jobs:
           libxkbcommon-dev
           xorg-dev
           xvfb
-      - name: Install fyne-cross
-        run: go install github.com/fyne-io/fyne-cross@latest
-      - name: Package (windows)
-        run: fyne-cross package -os windows --appVersion 2.0 --release true
+          wget https://github.com/upx/upx/releases/download/v4.0.2/upx-4.2.2-amd64_linux.tar.xz
+          tar -Jxf upx*.tar.xz
+          sudo cp upx*/upx /usr/bin
+          go env -w GO111MODULE=on
+          go install github.com/fyne-io/fyne-cross@latest
+      - name: Package
+        run: fyne-cross windows -arch=amd64,386 --appVersion 2.0 --release true
