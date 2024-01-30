@@ -1,4 +1,4 @@
-name: Release Build
+name: Build Release
 on:
   release:
     types: [created]
@@ -32,4 +32,4 @@ jobs:
       - name: Install fyne-cross
         run: go install github.com/fyne-io/fyne-cross@latest
       - name: Package (windows)
-        run: package -os windows --appVersion 2.0 --release true
+        run: fyne-cross package -os windows --appVersion 2.0 --release true
