@@ -16,7 +16,7 @@ func main() {
 	initBundle(*data)
 	ap.Settings().SetTheme(&MyTheme{data.themeSettings, data.langSettings})
 	meta := ap.Metadata()
-	win := ap.NewWindow(LoadString("TitleLabel") + " " + meta.Version + " by Libs")
+	win := ap.NewWindow(LoadString("TitleLabel") + " v" + meta.Version + " by Libs")
 	tabs := container.NewAppTabs(
 		container.NewTabItem(LoadString("TabMainLabel"), baseScreen(win, data)),
 		container.NewTabItem("Chrome++", chromePlusScreen(win, data)),
