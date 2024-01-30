@@ -52,4 +52,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ${GITHUB_WORKSPACE}/dist/chrome_updater-windows-${{ matrix.arch }}.zip
+          files: dist/chrome_updater-windows-${{ matrix.arch }}.zip
