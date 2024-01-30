@@ -40,7 +40,7 @@ jobs:
         with:
           install-only: true
       - name: Package
-        run: fyne-cross windows -metadata appVersion=${{ steps.get_version.outputs.VERSION }} -arch=${{ matrix.arch }}
+        run: fyne-cross windows -metadata AppVersion=${{ steps.get_version.outputs.VERSION }} -arch=${{ matrix.arch }}
       - name: Compress
         run: |
             mkdir ${GITHUB_WORKSPACE}/dist
