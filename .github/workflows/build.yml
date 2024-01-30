@@ -29,8 +29,8 @@ jobs:
           libxkbcommon-dev
           xorg-dev
           xvfb
-          go env -w GO111MODULE=on
-          go install github.com/fyne-io/fyne-cross@latest
+      - name: Setup fyne
+        run: go install github.com/fyne-io/fyne-cross@latest
       - name: Install UPX
         uses: crazy-max/ghaction-upx@v3
         with:
