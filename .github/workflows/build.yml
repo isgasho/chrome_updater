@@ -40,8 +40,8 @@ jobs:
         run: fyne-cross windows -arch=${{ matrix.arch }}
       - name: Compress
         run:
-            unzip ${GITHUB_WORKSPACE}/dist/windows-${{ matrix.arch }}/chrome_updater.exe.zip -d ${GITHUB_WORKSPACE}/dist/windows-${{ matrix.arch }}
-            mv  -f ${GITHUB_WORKSPACE}/dist/windows-${{ matrix.arch }}/chrome_updater.exe ${GITHUB_WORKSPACE}/dist/chrome_updater.exe
+            unzip ${GITHUB_WORKSPACE}/fyne-cross/dist/windows-${{ matrix.arch }}/chrome_updater.exe.zip -d ${GITHUB_WORKSPACE}/fyne-cross/dist/windows-${{ matrix.arch }}
+            mv -f ${GITHUB_WORKSPACE}/fyne-cross/dist/windows-${{ matrix.arch }}/chrome_updater.exe ${GITHUB_WORKSPACE}/dist/chrome_updater.exe
             upx -9 ${GITHUB_WORKSPACE}/dist/chrome_updater.exe
             zip -r ${GITHUB_WORKSPACE}/dist/chrome-updater-windows-${{ matrix.arch }}.zip ${GITHUB_WORKSPACE}/dist/chrome_updater.exe
       - name: Release
